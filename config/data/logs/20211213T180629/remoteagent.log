@@ -1,0 +1,2 @@
+[2021-12-13 18:06:31.382] [main] [error] /config/extensions/helloworld Extension is not compatible with Code 1.60.0. Extension requires: ^1.63.0.
+[2021-12-13 18:12:16.802] [main] [error] /config/extensions/helloworld Extension is not compatible with Code 1.60.0. Extension requires: ^1.63.0.

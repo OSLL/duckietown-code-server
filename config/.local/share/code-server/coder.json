@@ -1,0 +1,13 @@
+{
+  "lastVisited": {
+    "url": "/config/extensions/hello1",
+    "workspace": false
+  },
+  "query": {
+    "folder": "/config/extensions/hello1"
+  },
+  "update": {
+    "checked": 1644323968748,
+    "version": "4.0.2"
+  }
+}
