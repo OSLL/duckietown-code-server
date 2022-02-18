@@ -15,7 +15,7 @@ services:
       - PROXY_DOMAIN=code-server.my.domain #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
-      - /Users/stacylkv/NSU/diploma/duckietown-code-server/config:/config
+      - ./config:/config
     ports:
       - 8443:8443
     restart: unless-stopped

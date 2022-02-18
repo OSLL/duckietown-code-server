@@ -1,8 +1,0 @@
-[2021-12-29 09:55:23.070] [main] [error] /config/extensions/helloworld Extension is not compatible with Code 1.60.0. Extension requires: ^1.63.0.
-[2021-12-29 09:55:38.935] [main] [info] Uninstalling extension: ms-toolsai.jupyter
-[2021-12-29 09:55:39.272] [main] [info] Detected extension removed from another source ms-toolsai.jupyter
-[2021-12-29 09:55:39.326] [main] [info] Successfully uninstalled extension: ms-toolsai.jupyter
-[2021-12-29 09:56:14.813] [main] [info] Uninstalling extension: ms-python.python
-[2021-12-29 09:56:15.061] [main] [info] Detected extension removed from another source ms-python.python
-[2021-12-29 09:56:15.458] [main] [info] Successfully uninstalled extension: ms-python.python
-[2021-12-29 09:58:44.983] [main] [error] /config/extensions/helloworld Extension is not compatible with Code 1.60.0. Extension requires: ^1.63.0.
