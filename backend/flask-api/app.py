@@ -18,6 +18,10 @@ tasks = [
     }
 ]
 
+@app.route('/')
+def hello():
+    return 'This Compose/Flask demo has been viewed.'
+
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': tasks})
@@ -47,4 +51,4 @@ def create_task():
     return jsonify({'task': task}), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)

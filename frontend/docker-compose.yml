@@ -1,5 +1,5 @@
 ---
-version: "2.1"
+version: "2.2"
 services:
   code-server:
     image: lscr.io/linuxserver/code-server
@@ -17,8 +17,15 @@ services:
     volumes:
       - ./config:/config
     ports:
-      - 8443:8443
+      - "8443:8443"
     restart: unless-stopped
 
   flask-api:
-    image:
+    image: flask-api
+    container_name: flask-api
+    build: .
+    volumes:
+      - ../backend/flask-api:/code
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
