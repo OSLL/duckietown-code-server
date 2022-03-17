@@ -15,3 +15,8 @@ coverage
 .npm
 .ssh
 **/data/
+**/.vscode
+**/.bash_history
+**/.bashrc
+**/.profile
+**/.obsolete
