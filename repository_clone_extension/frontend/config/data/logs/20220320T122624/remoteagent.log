@@ -1,0 +1,25 @@
+[2022-03-20 12:26:24.689] [remoteagent] [info] Extension host agent started.
+[2022-03-20 12:26:30.597] [remoteagent] [warning] No ptyHost heartbeat after 6 seconds
+[2022-03-20 12:26:35.076] [remoteagent] [info] [172.19.0.1][84d5da42][ManagementConnection] New connection established.
+[2022-03-20 12:26:40.611] [remoteagent] [info] [172.19.0.1][a3916f74][ExtensionHostConnection] New connection established.
+[2022-03-20 12:26:40.654] [remoteagent] [info] [172.19.0.1][a3916f74][ExtensionHostConnection] <405> Launched Extension Host Process.
+[2022-03-20 12:27:21.531] [remoteagent] [info] Installing extension: github.vscode-pull-request-github
+[2022-03-20 12:27:23.774] [remoteagent] [info] Downloaded extension: github.vscode-pull-request-github /config/data/CachedExtensionVSIXs/github.vscode-pull-request-github-0.34.3
+[2022-03-20 12:27:24.321] [remoteagent] [info] Extracted extension to /config/extensions/.31ed15a5-4669-4b34-9f4e-6d214c32c6f9: github.vscode-pull-request-github
+[2022-03-20 12:27:24.385] [remoteagent] [info] Renamed to /config/extensions/github.vscode-pull-request-github-0.34.3
+[2022-03-20 12:27:24.392] [remoteagent] [info] Extracting completed. github.vscode-pull-request-github
+[2022-03-20 12:27:24.393] [remoteagent] [info] Extension installed successfully: github.vscode-pull-request-github
+[2022-03-20 12:27:48.978] [remoteagent] [info] Uninstalling extension: github.vscode-pull-request-github
+[2022-03-20 12:27:49.310] [remoteagent] [info] Detected extension removed from another source github.vscode-pull-request-github
+[2022-03-20 12:27:49.480] [remoteagent] [info] Successfully uninstalled extension: github.vscode-pull-request-github
+[2022-03-20 12:28:14.640] [remoteagent] [info] [172.19.0.1][84d5da42][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-03-20 12:28:14.781] [remoteagent] [info] [172.19.0.1][a3916f74][ExtensionHostConnection] <405> Extension Host Process exited with code: 0, signal: null.
+[2022-03-20 12:28:20.964] [remoteagent] [info] [172.19.0.1][213134dd][ManagementConnection] New connection established.
+[2022-03-20 12:28:26.708] [remoteagent] [info] [172.19.0.1][a2cd436d][ExtensionHostConnection] New connection established.
+[2022-03-20 12:28:26.726] [remoteagent] [info] [172.19.0.1][a2cd436d][ExtensionHostConnection] <433> Launched Extension Host Process.
+[2022-03-20 12:35:45.985] [remoteagent] [info] Installing extension: github.vscode-pull-request-github
+[2022-03-20 12:35:47.260] [remoteagent] [info] Downloaded extension: github.vscode-pull-request-github /config/data/CachedExtensionVSIXs/github.vscode-pull-request-github-0.34.3
+[2022-03-20 12:35:47.369] [remoteagent] [info] Removed the extension from uninstalled list: github.vscode-pull-request-github
+[2022-03-20 12:35:47.389] [remoteagent] [info] Extension installed successfully: github.vscode-pull-request-github
+[2022-03-20 13:14:10.305] [remoteagent] [info] [172.19.0.1][213134dd][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-03-20 13:14:10.450] [remoteagent] [info] [172.19.0.1][a2cd436d][ExtensionHostConnection] <433> Extension Host Process exited with code: 0, signal: null.

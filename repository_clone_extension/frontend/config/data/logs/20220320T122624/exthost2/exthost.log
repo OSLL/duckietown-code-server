@@ -1,0 +1,14 @@
+[2022-03-20 12:28:31.727] [exthost] [info] Extension host with pid 433 started
+[2022-03-20 12:28:31.787] [exthost] [info] Lock '/config/data/User/workspaceStorage/-10525282/vscode.lock': Lock acquired.
+[2022-03-20 12:28:32.102] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-03-20 12:28:32.127] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.github
+[2022-03-20 12:28:32.585] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-03-20 12:28:33.101] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-03-20 12:28:33.691] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-03-20 12:28:33.824] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-03-20 12:28:33.830] [exthost] [info] Eager extensions activated
+[2022-03-20 12:29:16.907] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+[2022-03-20 12:35:49.144] [exthost] [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: '*'
+[2022-03-20 13:14:10.376] [exthost] [info] extension host terminating: received terminate message from renderer
+[2022-03-20 13:14:10.377] [exthost] [info] Lock '/config/data/User/workspaceStorage/-10525282/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-03-20 13:14:10.424] [exthost] [info] Extension host with pid 433 exiting with code 0

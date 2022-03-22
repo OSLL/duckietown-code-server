@@ -1,0 +1,53 @@
+[2022-03-20T12:25:48.778Z] info  code-server 4.1.0 9e620e90f53fb91338a2ba1aaa2e556d42ae52d5
+[2022-03-20T12:25:48.785Z] info  Using user-data-dir ~/data
+[2022-03-20T12:25:48.844Z] info  Using config file ~/.config/code-server/config.yaml
+[2022-03-20T12:25:48.845Z] info  HTTP server listening on http://0.0.0.0:8443/ 
+[2022-03-20T12:25:48.846Z] info    - Authentication is enabled
+[2022-03-20T12:25:48.848Z] info      - Using password from $PASSWORD
+[2022-03-20T12:25:48.851Z] info    - Not serving HTTPS 
+[2022-03-20T12:25:48.852Z] info    - Proxying the following domain:
+[2022-03-20T12:25:48.853Z] info      - *.code-server.my.domain
+[12:26:24] Extension host agent started.
+[12:26:35] [172.19.0.1][84d5da42][ManagementConnection] New connection established.
+[12:26:40] [172.19.0.1][a3916f74][ExtensionHostConnection] New connection established.
+[12:26:40] [172.19.0.1][a3916f74][ExtensionHostConnection] <405> Launched Extension Host Process.
+[12:27:21] Installing extension: github.vscode-pull-request-github
+[12:27:23] Downloaded extension: github.vscode-pull-request-github /config/data/CachedExtensionVSIXs/github.vscode-pull-request-github-0.34.3
+[12:27:24] Extracted extension to /config/extensions/.31ed15a5-4669-4b34-9f4e-6d214c32c6f9: github.vscode-pull-request-github
+[12:27:24] Renamed to /config/extensions/github.vscode-pull-request-github-0.34.3
+[12:27:24] Extracting completed. github.vscode-pull-request-github
+[12:27:24] Extension installed successfully: github.vscode-pull-request-github
+[12:27:48] Uninstalling extension: github.vscode-pull-request-github
+[12:27:49] Detected extension removed from another source github.vscode-pull-request-github
+[12:27:49] Successfully uninstalled extension: github.vscode-pull-request-github
+[12:28:14] [172.19.0.1][84d5da42][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[12:28:14] [172.19.0.1][a3916f74][ExtensionHostConnection] <405> Extension Host Process exited with code: 0, signal: null.
+[12:28:20] [172.19.0.1][213134dd][ManagementConnection] New connection established.
+[12:28:26] [172.19.0.1][a2cd436d][ExtensionHostConnection] New connection established.
+[12:28:26] [172.19.0.1][a2cd436d][ExtensionHostConnection] <433> Launched Extension Host Process.
+[12:35:45] Installing extension: github.vscode-pull-request-github
+[12:35:47] Downloaded extension: github.vscode-pull-request-github /config/data/CachedExtensionVSIXs/github.vscode-pull-request-github-0.34.3
+[12:35:47] Removed the extension from uninstalled list: github.vscode-pull-request-github
+[12:35:47] Extension installed successfully: github.vscode-pull-request-github
+[13:14:10] [172.19.0.1][213134dd][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[13:14:10] [172.19.0.1][a2cd436d][ExtensionHostConnection] <433> Extension Host Process exited with code: 0, signal: null.
+[2022-03-22T14:30:47.931Z] info  code-server 4.1.0 9e620e90f53fb91338a2ba1aaa2e556d42ae52d5
+[2022-03-22T14:30:47.936Z] info  Using user-data-dir ~/data
+[2022-03-22T14:30:47.971Z] info  Using config file ~/.config/code-server/config.yaml
+[2022-03-22T14:30:47.973Z] info  HTTP server listening on http://0.0.0.0:8443/ 
+[2022-03-22T14:30:47.974Z] info    - Authentication is enabled
+[2022-03-22T14:30:47.975Z] info      - Using password from $PASSWORD
+[2022-03-22T14:30:47.975Z] info    - Not serving HTTPS 
+[2022-03-22T14:30:47.976Z] info    - Proxying the following domain:
+[2022-03-22T14:30:47.978Z] info      - *.code-server.my.domain
+[14:31:33] Extension host agent started.
+[14:31:59] [172.19.0.1][d3adafa9][ManagementConnection] New connection established.
+[14:32:06] [172.19.0.1][83333385][ExtensionHostConnection] New connection established.
+[14:32:06] [172.19.0.1][83333385][ExtensionHostConnection] <445> Launched Extension Host Process.
+[14:37:44] [172.19.0.1][d3adafa9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[14:37:44] [172.19.0.1][83333385][ExtensionHostConnection] <445> Extension Host Process exited with code: 0, signal: null.
+[14:37:47] [172.19.0.1][c01d2a46][ManagementConnection] New connection established.
+[14:37:51] [172.19.0.1][4efe28b9][ExtensionHostConnection] New connection established.
+[14:37:51] [172.19.0.1][4efe28b9][ExtensionHostConnection] <508> Launched Extension Host Process.
+[14:38:50] [172.19.0.1][c01d2a46][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[14:38:50] [172.19.0.1][4efe28b9][ExtensionHostConnection] <508> Extension Host Process exited with code: 0, signal: null.

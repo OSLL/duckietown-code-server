@@ -1,0 +1,9 @@
+{
+  "query": {
+    "folder": "/config/duckietown-code-server"
+  },
+  "update": {
+    "checked": 1647959521623,
+    "version": "4.1.0"
+  }
+}
