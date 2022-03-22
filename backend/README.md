@@ -1,9 +1,25 @@
-# duckietown-code-server
-____
-## Run flask API
-1. Run `pip install virtualenv`
-2. Run `virtualenv flask` in `flask-api` directory.
-3. Run `flask/bin/pip install flask`
-4. Run `chmod a+x app.py`
-5. Run `./app.py` to run app.
-6. You can test app using `curl`. For example: `curl -i http://localhost:5000/todo/api/v1.0/tasks`
+
+#Запуск backend
+
+Для запуска понадобится модуль Flask.
+```
+pip install Flask
+```
+
+Далее запускаем сам сервер, для этого перейдите в папку backend и введите следующую команду:
+```
+python3 main.py 
+```
+# Проверка работы
+
+Для проверки перейдите по этому  url  `http://127.0.0.1:5000/run`
+
+
+Присутствует несколько запросов:
+```
+http://127.0.0.1:5000/run
+
+http://127.0.0.1:5000/build
+
+http://127.0.0.1:5000/clone_repo
+```
