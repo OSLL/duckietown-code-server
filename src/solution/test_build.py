@@ -14,6 +14,7 @@ def build_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
         logging.info(
             f"COPY template dir from hostname [{hostname}]")
         dir = str(directory.absolute())
+        os.system(f'rm -fr {dir}/*')
         COPY_COMMAND = f'rsync --rsh="sshpass -p quackquack ssh -o StrictHostKeyChecking=no -l duckie" --archive duckie@{hostname}.local:/code/template-ros-core/ {dir}'
         os.system(COPY_COMMAND)
         if not directory.is_absolute():
