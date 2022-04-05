@@ -10,6 +10,8 @@ logging.basicConfig(level=logging.INFO)
 def run_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
     logging.info(f"RUN template for hostname [{hostname}], directory [{directory}]")
     with open(log.absolute(), 'w') as file:
+        # clean directory on local machine
+        #----------------------------------------
         # copy directory from bot to local machine
         logging.info(
             f"COPY template dir from hostname [{hostname}]")
@@ -24,4 +26,4 @@ def run_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
 
 
 if __name__ == '__main__':
-    run_template_ros_core("autobot07", Path("/home/i/template-ros-core"), Path("./logs.txt"))
+    run_template_ros_core("autobot10", Path("/home/i/template-ros-core"), Path("./logs.txt"))
