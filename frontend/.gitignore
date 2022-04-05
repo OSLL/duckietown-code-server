@@ -1,0 +1,17 @@
+.tsbuildinfo
+.cache
+**/out*/
+node_modules
+vendor/modules
+node-*
+/plugins
+/lib/coder-cloud-agent
+.home
+coverage
+**/.DS_Store
+.idea
+.local
+.config
+.npm
+.ssh
+**/data/
