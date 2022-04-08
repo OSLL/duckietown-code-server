@@ -1,8 +1,8 @@
-# duckietown-code-server
+## Duckietown Code Server
 
-Cloning the project
+Так как frontend (VS Code) разворачивается на боте, а backend на отдельной машине, каждый компонент запускается отдельно в соответствии с Readme:
 
-Run from root folder
-```
-docker-compose up --build 
-```
+- Frontend: 
+  [Развернуть docker-container](https://github.com/OSLL/duckietown-code-server/blob/dev/frontend/README.md)
+  
+- Backend: [Запустить flask сервер](https://github.com/OSLL/duckietown-code-server/blob/dev/backend/README.md)
