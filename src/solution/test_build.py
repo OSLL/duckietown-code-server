@@ -28,4 +28,4 @@ def build_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
 
 
 if __name__ == '__main__':
-    build_template_ros_core("autobot10", Path("/home/i/template-ros-core"), Path("./logs.txt"))
+    build_template_ros_core("autobot10", Path("/src/template-ros-core"), Path("./logs.txt"))

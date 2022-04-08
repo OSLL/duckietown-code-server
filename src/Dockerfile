@@ -5,6 +5,7 @@ COPY . ./src
 WORKDIR src
 
 RUN apt-get update
+RUN apt-get install -y avahi-utils iputils-ping apache2-utils
 RUN apt-get install sshpass
 RUN mkdir template-ros-core
 #RUN apt-get install rsync
