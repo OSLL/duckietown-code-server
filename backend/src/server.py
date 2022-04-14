@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/build", methods=['GET'])
 def build():
     hostname: str = request.args.get("hostname")
-    directory: str = request.args.get("directory")
+    directory: str = request.args.get("dir")
     log: str = request.args.get("log")
     build_template_ros_core(hostname, Path(directory), Path(log))
 
@@ -17,7 +17,7 @@ def build():
 @app.route("/run", methods=['GET'])
 def run():
     hostname: str = request.args.get("hostname")
-    directory: str = request.args.get("directory")
+    directory: str = request.args.get("dir")
     log: str = request.args.get("log")
     run_template_ros_core(hostname, Path(directory), Path(log))
 
