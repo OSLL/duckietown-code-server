@@ -1,10 +1,10 @@
 version: "3.3"
 
 services:
-  web-ide-docker:
+  backend:
     build: ./src
     network_mode: "host"
-    container_name: web-ide-docker
+    container_name: web-ide-backend
     volumes:
       - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
       - /var/run/dbus:/var/run/dbus

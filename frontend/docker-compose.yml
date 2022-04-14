@@ -2,8 +2,8 @@
 version: "2.1"
 services:
   code-server:
-    image: lscr.io/linuxserver/code-server
-    container_name: code-server
+    image: lscr.io/linuxserver/code-backend
+    container_name: code-backend
     environment:
       - PUID=1000
       - PGID=1000
@@ -12,7 +12,7 @@ services:
       # - HASHED_PASSWORD= #optional
       - SUDO_PASSWORD=password #optional
       # - SUDO_PASSWORD_HASH= #optional
-      - PROXY_DOMAIN=code-server.my.domain #optional
+      - PROXY_DOMAIN=code-backend.my.domain #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
       - ./config:/config

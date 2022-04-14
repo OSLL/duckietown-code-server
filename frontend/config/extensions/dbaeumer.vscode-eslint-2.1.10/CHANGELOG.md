@@ -262,7 +262,7 @@ server/
 Then using the setting:
 ```json
   "eslint.workingDirectories": [
-    "./client", "./server"
+    "./client", "./backend"
   ]
 ```
 will validate files inside the server directory with the server directory as the current working directory. Same for files in the client directory. If the setting is omitted the working directory is the workspace folder.

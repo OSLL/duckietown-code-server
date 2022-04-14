@@ -128,7 +128,7 @@ This extension contributes the following variables to the [settings](https://cod
   ```
   Then using the setting:
   ```javascript
-    "eslint.workingDirectories": [ "./client", "./server" ]
+    "eslint.workingDirectories": [ "./client", "./backend" ]
   ```
   will validate files inside the server directory with the server directory as the current eslint working directory. Same for files in the client directory. The ESLint extension will also change the process's working directory to the provided directories. If this is not wanted a literal with the `!cwd` property can be used (e.g. `{ "directory": "./client", "!cwd": true }`). This will use the client directory as the ESLint working directory but will not change the process`s working directory.
   - `{ "pattern": glob pattern }` (@since 2.0.0): Allows to specify a pattern to detect the working directory. This is basically a short cut for listing every directory. If you have a mono repository with all your projects being below a packages folder you can use `{ "pattern": "./packages/*/" }` to make all these folders working directories.
@@ -197,7 +197,7 @@ To avoid validation from any TSLint installation disable TSLint using `"tslint.e
 As with JavaScript validating TypeScript in a mono repository requires that you tell the VS Code ESLint extension what the current working directories are. Use the `eslint.workingDirectories` setting to do so. For this repository the working directory setup looks as follows:
 
 ```json
-	"eslint.workingDirectories": [ "./client", "./server" ]
+	"eslint.workingDirectories": [ "./client", "./backend" ]
 ```
 
 ## ESLint 6.x
