@@ -1,32 +1,37 @@
 from flask import Flask
+from flask import jsonify
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-
-# Для отрисовки ответа по центру
-def visual(message):
-    return ("<div style=\"display:flex;justify-content: center;\"><h1> {} </h1></div>").format(message)
+cors = CORS(app)
+app.config['Access-Control-Allow-Origin'] = '*';
 
 # Обработчик ошибки 404 (Нет такой страницы/запроса)
 @app.errorhandler(404)
+@cross_origin()
 def error404(e):
-    return visual("Error 404")
+    message = {'message':'Error 404'}
+    print("Build")
+    return jsonify(message)
 
 
 # Запросы на работу с проектом
 # На данный момент просто заглушки без логики
 
 @app.route("/build")
+@cross_origin()
 def build():
-    return visual("Is built!")
-
+    message = {'message':'Is build!'}
+    print("Build")
+    return jsonify(message)
+    
+ 
 @app.route("/run")
+@cross_origin()
 def run():
-    return visual("Is runing!")
-
-@app.route("/clone_repo")
-def clone_repo():
-    return visual("Is cloning repo!")
-
+    message = {'message':'Is runing!'}
+    print("Runing...")
+    return jsonify(message)
 
 
 if __name__ == '__main__':
