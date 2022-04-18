@@ -12,6 +12,7 @@ def build():
     directory: str = request.args.get("dir")
     log: str = request.args.get("log")
     build_template_ros_core(hostname, Path(directory), Path(log))
+    return "<h1>Solution was build solution!</h1>"
 
 
 @app.route("/run", methods=['GET'])
@@ -20,6 +21,7 @@ def run():
     directory: str = request.args.get("dir")
     log: str = request.args.get("log")
     run_template_ros_core(hostname, Path(directory), Path(log))
+    return "<h1>Run solution!</h1>"
 
 
 if __name__ == '__main__':
