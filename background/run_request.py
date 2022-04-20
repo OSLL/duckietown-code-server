@@ -1,9 +1,10 @@
 import requests
 
-URL = "localhost:5001"
-hostname = "autobot07"
-directory = "src/template-ros-core/"
-log = "src/logs.txt"
+URL = "http://localhost:5001"
+hostname = "autobot10"
+directory = "/src/template-ros-core"
+log = "/src/template-ros-core/logs.txt"
+
 
 if __name__ == "__main__":
     requests.get(f"{URL}"
