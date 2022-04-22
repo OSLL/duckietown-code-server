@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   code-server:
-    image: lscr.io/linuxserver/code-server
+    build: ./config
     container_name: code-server
     environment:
       - PUID=1000
@@ -15,7 +15,7 @@ services:
       - PROXY_DOMAIN=code-server.my.domain #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
-      - ./config:/config
+      - /code:/config/current-repository
     ports:
       - 8443:8443
     restart: unless-stopped
