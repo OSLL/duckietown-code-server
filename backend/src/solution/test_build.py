@@ -1,13 +1,16 @@
-import subprocess
 from pathlib import Path
+import subprocess
 import logging
 import os
 
 BUILD_COMMAND = "dts devel build --workdir {dir} -H {hostname}.local -f"
 logging.basicConfig(level=logging.INFO)
 
+DEFAULT_DIR = "/src/template-ros-core"
+DEFAULT_LOGS = "/src/logs.txt"
 
-def build_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
+
+def build_template_ros_core(hostname: str, directory: Path = Path(DEFAULT_DIR), log: Path = Path(DEFAULT_LOGS)) -> None:
     logging.info(f"BUILD template for hostname [{hostname}], directory [{directory}]")
     with open(log.absolute(), 'w') as file:
         # copy directory from bot to local machine

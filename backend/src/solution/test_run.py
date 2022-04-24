@@ -1,12 +1,16 @@
 from pathlib import Path
+import subprocess
 import logging
 import os
-import subprocess
 
 logging.basicConfig(level=logging.INFO)
 
 
-def run_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
+DEFAULT_DIR = "/src/template-ros-core"
+DEFAULT_LOGS = "/src/logs.txt"
+
+
+def run_template_ros_core(hostname: str, directory: Path = Path(DEFAULT_DIR), log: Path = Path(DEFAULT_LOGS)) -> None:
     logging.info(f"RUN template for hostname [{hostname}], directory [{directory}]")
     with open(log.absolute(), 'w') as file:
         # copy directory from bot to local machine
@@ -14,7 +18,6 @@ def run_template_ros_core(hostname: str, directory: Path, log: Path) -> None:
             f"COPY template dir from hostname [{hostname}]")
         dir = str(directory.absolute())
         os.system(f'rm -fr {dir}/*')
-
         COPY_COMMAND = f'rsync --rsh="sshpass -p quackquack ssh -o StrictHostKeyChecking=no -l duckie" --archive duckie@{hostname}.local:/code/template-ros-core/ {dir}'
         os.system(COPY_COMMAND)
         RUN_COMMAND = f"dts devel run --workdir {dir} -M -s -f -H {hostname} --"

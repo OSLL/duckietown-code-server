@@ -10,17 +10,17 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:helloworld.helloWorld"
+		"onCommand:helloworld.helloWorld"
 	],
 	"browser": "./dist/web/extension.js",
 	"contributes": {
 		"viewsContainers": {
 			"activitybar": [
-			  {
-				"id": "log-msg",
-				"title": "Click me",
-				"icon": "media/icon1.svg"
-			  }
+				{
+					"id": "log-msg",
+					"title": "Click me",
+					"icon": "media/icon1.svg"
+				}
 			]
 		},
 		"views": {
@@ -30,13 +30,23 @@
 					"name": "test",
 					"icon": "media/icon1.svg",
 					"contextualTitle": "Click me"
+				},
+				{
+					"id": "commands",
+					"name": "Commands",
+					"icon": "media/icon1.svg",
+					"contextualTitle": "commands for extension"
 				}
 			]
 		},
 		"viewsWelcome": [
 			{
-			  "view": "test",
-			  "contents": "Test button.\n[Click me](command:test.refreshEntry)"
+				"view": "test",
+				"contents": "Test button.\n[Click me](command:test.refreshEntry)"
+			},
+			{
+				"view": "commands",
+				"contents": "[Start extension](command:helloworld.helloWorld)\n[Build](command:extension.build)\n[Run](command:extension.run)"
 			}
 		],
 		"commands": [
@@ -46,7 +56,19 @@
 			},
 			{
 				"command": "helloworld.helloWorld",
+				"title": "Start extensions Hello World"
+			},
+			{
+				"command": "extension.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "extension.build",
+				"title": "Build"
+			},
+			{
+				"command": "extension.run",
+				"title": "Run"
 			}
 		]
 	},
@@ -61,19 +83,20 @@
 		"run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.65.0",
 		"@types/mocha": "^9.1.0",
-		"eslint": "^8.9.0",
+		"@types/vscode": "^1.65.0",
+		"@types/webpack-env": "^1.16.3",
 		"@typescript-eslint/eslint-plugin": "^5.12.1",
 		"@typescript-eslint/parser": "^5.12.1",
-		"mocha": "^9.2.1",
-		"typescript": "^4.5.5",
 		"@vscode/test-web": "^0.0.22",
+		"assert": "^2.0.0",
+		"eslint": "^8.9.0",
+		"mocha": "^9.2.1",
+		"process": "^0.11.10",
 		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
 		"webpack": "^5.69.1",
 		"webpack-cli": "^4.9.2",
-		"@types/webpack-env": "^1.16.3",
-		"assert": "^2.0.0",
-		"process": "^0.11.10"
+		"webpack-dev-server": "^4.8.1"
 	}
 }
