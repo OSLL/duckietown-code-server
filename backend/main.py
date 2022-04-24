@@ -1,38 +1,33 @@
-from flask import Flask
-from flask import jsonify
+
+from flask import Flask, request
 from flask_cors import CORS, cross_origin
+from flask import jsonify
+
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config['Access-Control-Allow-Origin'] = '*';
 
-# Обработчик ошибки 404 (Нет такой страницы/запроса)
-@app.errorhandler(404)
-@cross_origin()
-def error404(e):
-    message = {'message':'Error 404'}
-    print("Build")
-    return jsonify(message)
 
-
-# Запросы на работу с проектом
-# На данный момент просто заглушки без логики
-
-@app.route("/build")
+@app.route("/build", methods=['GET'])
 @cross_origin()
 def build():
-    message = {'message':'Is build!'}
-    print("Build")
+    hostName = request.args.get('hostName')
+    print(hostName)
+    print(request)
+    message = {'message':'Solution was build solution!'}
     return jsonify(message)
-    
- 
-@app.route("/run")
+
+
+@app.route("/run", methods=['GET'])
 @cross_origin()
 def run():
-    message = {'message':'Is runing!'}
-    print("Runing...")
+    hostName = request.args.get('hostName')
+    print(hostName)
+    print(request)
+    message = {'message':'Run solution!'}
     return jsonify(message)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

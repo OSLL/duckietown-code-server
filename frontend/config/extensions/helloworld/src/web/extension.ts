@@ -3,11 +3,12 @@ import { LogMsgTreeProvider } from '../web/testLog';
 //import  fetch  from 'node-fetch';
 
 
-const backEndPort = 5000;
+const backEndPort = 5001;
 const config ={local:`http://localhost:${backEndPort}`};
+const hostName = 'autobot10'; //add process.env.HOSTNAME
 
 async function apiRequest(name = '/'){
-	return await fetch(config.local + name)
+	return await fetch(config.local + name + `?hostName=${hostName}`)
 				.then((response) => response.json()).then(json => json.message)
 				.catch(error => `Error message: ${error}`);
 }
