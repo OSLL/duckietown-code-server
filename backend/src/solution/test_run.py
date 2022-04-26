@@ -11,6 +11,7 @@ DEFAULT_LOGS = "/src/logs.txt"
 
 
 def run_template_ros_core(hostname: str, directory: Path = Path(DEFAULT_DIR), log: Path = Path(DEFAULT_LOGS)) -> None:
+
     logging.info(f"RUN template for hostname [{hostname}], directory [{directory}]")
     with open(log.absolute(), 'w') as file:
         # copy directory from bot to local machine

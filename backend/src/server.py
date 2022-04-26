@@ -10,7 +10,7 @@ app.config['Access-Control-Allow-Origin'] = '*'
 
 
 @app.route("/build", methods=['GET'])
-@cross_origin()
+#@cross_origin()
 def build():
     hostname: str = request.args.get("hostname")
     build_template_ros_core(hostname)
@@ -19,7 +19,7 @@ def build():
 
 
 @app.route("/run", methods=['GET'])
-@cross_origin()
+#@cross_origin()
 def run():
     hostname: str = request.args.get("hostname")
     run_template_ros_core(hostname)
