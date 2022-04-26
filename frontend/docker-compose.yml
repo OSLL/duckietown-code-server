@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  code-server:
+  web-ide-frontend:
     container_name: web-ide-frontend
     build: ./config
     environment:
