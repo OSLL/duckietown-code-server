@@ -46,7 +46,7 @@
 			},
 			{
 				"view": "commands",
-				"contents": "[Start extension](command:helloworld.helloWorld)\n[Build](command:extension.build)\n[Run](command:extension.run)"
+				"contents": "[Start extension](command:helloworld.helloWorld)\n[Build](command:extension.build)\n[Run](command:extension.run)\n[Stop](command:extension.stop)"
 			}
 		],
 		"commands": [
@@ -69,6 +69,10 @@
 			{
 				"command": "extension.run",
 				"title": "Run"
+			},
+			{
+				"command": "extension.stop",
+				"title": "Stop"
 			}
 		]
 	},

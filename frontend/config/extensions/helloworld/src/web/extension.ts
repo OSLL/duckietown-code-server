@@ -46,9 +46,16 @@ const run = vscode.commands.registerCommand('extension.run', async () => {
 		vscode.window.showInformationMessage(response);
 });
 
+const stop = vscode.commands.registerCommand('extension.stop', async () => {
+	let response = await apiRequest('/stop');
+	console.log(`GET response.message: ${response}`);
+	vscode.window.showInformationMessage(response);
+});
+
 context.subscriptions.push(consoleLogHelloWorld);
 context.subscriptions.push(build);
 context.subscriptions.push(run);
+context.subscriptions.push(stop);
 
 }
 

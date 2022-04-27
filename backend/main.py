@@ -13,8 +13,6 @@ app.config['Access-Control-Allow-Origin'] = '*';
 @cross_origin()
 def build():
     hostName = request.args.get('hostName')
-    print(hostName)
-    print(request)
     message = {'message':'Solution was build solution!'}
     return jsonify(message)
 
@@ -23,10 +21,16 @@ def build():
 @cross_origin()
 def run():
     hostName = request.args.get('hostName')
-    print(hostName)
-    print(request)
     message = {'message':'Run solution!'}
     return jsonify(message)
+
+@app.route("/stop", methods=['GET'])
+@cross_origin()
+def stop():
+    hostName = request.args.get('hostName')
+    message = {'message':'Stop solution!'}
+    return jsonify(message)
+
 
 
 if __name__ == '__main__':
