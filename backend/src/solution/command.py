@@ -444,7 +444,7 @@ class DTCommand(DTCommandAbs):
             dtslogger.info("Code synced!")
         # run
         exitcode = _run_cmd(
-            [parsed.runtime, "-H=%s" % parsed.machine, "run", "-it"]
+            [parsed.runtime, "-H=%s" % parsed.machine, "run"]
             + module_configuration_args
             + parsed.docker_args
             + mount_option
