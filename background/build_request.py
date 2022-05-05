@@ -1,7 +1,7 @@
 import requests
 
 URL = "http://localhost:5001"
-hostname = "autobot10"
+hostname = "autobot06"
 
 
 if __name__ == "__main__":

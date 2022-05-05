@@ -5,4 +5,4 @@ hostname = "autobot06"
 
 
 if __name__ == "__main__":
-    requests.get(f"{URL}/run?hostname={hostname}")
+    requests.get(f"{URL}/stop?hostname={hostname}")
