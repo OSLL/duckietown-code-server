@@ -3,6 +3,15 @@
 Так как frontend (VS Code) разворачивается на боте, а backend на отдельной машине, каждый компонент запускается отдельно в соответствии с Readme:
 
 - Frontend: 
-  [Развернуть docker-container](https://github.com/OSLL/duckietown-code-server/blob/dev/frontend/README.md)
+  ```
+  cd frontend/
+  docker-compose up --build -d
+  docker logs web-ide-frontend
+  ```
+  Paste link from docker logs into browser
   
-- Backend: [Запустить flask сервер](https://github.com/OSLL/duckietown-code-server/blob/dev/backend/README.md)
+- Backend: 
+```
+  cd backend/
+  docker-compose up --build -d
+```
