@@ -15,7 +15,7 @@ services:
       - PROXY_DOMAIN=code-backend.my.domain #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
-      - /code:/config/current-repository
+      - /home/dmitry/rep:/config/current-repository
     ports:
       - 8443:8443
     restart: unless-stopped
