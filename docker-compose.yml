@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  web-ide-frontend:
+  frontend:
     container_name: web-ide-frontend
     build: ./frontend/config
     environment:
@@ -22,3 +22,8 @@ services:
       - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
       - /var/run/dbus:/var/run/dbus
       - /var/run/docker.sock:/var/run/docker.sock
+
+  nginx:
+    build: ./nginx
+    network_mode: "host"
+    container_name: web-ide-nginx
