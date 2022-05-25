@@ -6,13 +6,9 @@ import { LogMsgTreeProvider } from '../web/testLog';
 const backEndPort = 5001;
 const config ={local:`http://localhost:${backEndPort}`};
 
-/* TODO remove comments after being able to check the website on the side from the browser
 // get duckiebot name for building and running solution
 const os = require('os');
 const hostName = os.hostname()
- */
-
-const hostName = 'autobot06';
 
 async function apiRequest(name = '/'){
 	return await fetch(config.local + name + `?hostname=${hostName}`)
