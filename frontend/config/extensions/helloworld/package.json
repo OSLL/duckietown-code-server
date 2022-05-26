@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:helloworld.helloWorld"
+        "onStartupFinished"
 	],
 	"browser": "./dist/web/extension.js",
 	"contributes": {
