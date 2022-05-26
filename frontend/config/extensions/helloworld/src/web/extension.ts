@@ -7,8 +7,10 @@ const backEndPort = 5001;
 const config ={local:`http://localhost:${backEndPort}`};
 
 // get duckiebot name for building and running solution
-const os = require('os');
-const hostName = os.hostname()
+//const os = require('os');
+//const hostName = os.hostname()
+
+const hostName = "autobot1"
 
 async function apiRequest(name = '/'){
 	return await fetch(config.local + name + `?hostname=${hostName}`)
@@ -16,8 +18,10 @@ async function apiRequest(name = '/'){
 				.catch(error => `Error message: ${error}`);
 }
 
+
+
 export function activate(context: vscode.ExtensionContext) {
-let disposable = vscode.commands.registerCommand('helloworld.helloWorld', () => {
+let disposable = vscode.commands.registerCommand('start', () => {
 	logMsgProvider.refresh();
 	vscode.window.showInformationMessage('Is started!');
 });
@@ -33,24 +37,40 @@ const kek = vscode.commands.registerCommand('test.refreshEntry', () => logMsgPro
 context.subscriptions.push(kek);
 
 //############################################
+
+const progressBar = async (requestFor:string) => { 
+	return await vscode.window.withProgress({
+		location: vscode.ProgressLocation.Notification,
+		title: "Try to " + requestFor.replace('/',''),
+		cancellable: false,
+	}, async (progress, token) => {
+		progress.report({ increment: 47, message:"Running... "});
+		let response = await apiRequest(requestFor);
+		
+		return response;
+	});
+}
+
+
+
 const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
 	vscode.window.showInformationMessage('Hello World!'); //Проверка работы 
 });
 
 const build = vscode.commands.registerCommand('extension.build', async () => {
-		let response = await apiRequest('/build');
+		let response = await progressBar('/build');
 		console.log(`GET response.message: ${response}`);
 		vscode.window.showInformationMessage(response);
 });
 	
 const run = vscode.commands.registerCommand('extension.run', async () => {
-		let response = await apiRequest('/run');
+		let response = await progressBar('/run');
 		console.log(`GET response.message: ${response}`);
 		vscode.window.showInformationMessage(response);
 });
 
 const stop = vscode.commands.registerCommand('extension.stop', async () => {
-	let response = await apiRequest('/stop');
+	let response = await progressBar('/stop');
 	console.log(`GET response.message: ${response}`);
 	vscode.window.showInformationMessage(response);
 });
