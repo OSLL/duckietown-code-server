@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "details": "duckietown-code-server package configuration",
+    "_data": {
+        "hostname": {
+            "type": "text",
+            "default": null,
+            "details": "Hostname of duckietown-code-server"
+        },
+        "port": {
+            "type": "text",
+            "default": 8443,
+            "details": "Port of duckietown-code-server" 
+        }
+    }
+} 
