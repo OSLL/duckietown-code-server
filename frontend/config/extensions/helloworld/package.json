@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:start"
+		"onStartupFinished"
 	],
 	"browser": "./dist/web/extension.js",
 	"contributes": {
@@ -42,17 +42,13 @@
 		"viewsWelcome": [
 			{
 				"view": "commands",
-				"contents": "[Start extension](command:start)\n[Build](command:extension.build)\n[Run](command:extension.run)\n[Stop](command:extension.stop)"
+				"contents": "[Build](command:extension.build)\n[Run](command:extension.run)\n[Stop](command:extension.stop)"
 			}
 		],
 		"commands": [
 			{
 				"command": "test.refreshEntry",
 				"title": "Refresh"
-			},
-			{
-				"command": "start",
-				"title": "Start extensions Hello World"
 			},
 			{
 				"command": "extension.helloWorld",
