@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { LogMsgTreeProvider } from '../web/testLog';
+import * as os from 'os';
 //import  fetch  from 'node-fetch';
 
 
@@ -7,10 +8,7 @@ const backEndPort = 5001;
 const config ={local:`http://localhost:${backEndPort}`};
 
 // get duckiebot name for building and running solution
-//const os = require('os');
-//const hostName = os.hostname()
-
-const hostName = "autobot1"
+const hostName = os.hostname()
 
 async function apiRequest(name = '/'){
 	return await fetch(config.local + name + `?hostname=${hostName}`)
