@@ -50,7 +50,7 @@ const progressBar = async (requestFor:string) => {
 		return response;
 	});
 }
-
+//#############################################
 
 
 const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
@@ -58,19 +58,19 @@ const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWor
 });
 
 const build = vscode.commands.registerCommand('extension.build', async () => {
-		let response = await progressBar('/build');
+		let response = await apiRequest('/build');
 		console.log(`GET response.message: ${response}`);
 		vscode.window.showInformationMessage(response);
 });
 	
 const run = vscode.commands.registerCommand('extension.run', async () => {
-		let response = await progressBar('/run');
+		let response = await apiRequest('/run');
 		console.log(`GET response.message: ${response}`);
 		vscode.window.showInformationMessage(response);
 });
 
 const stop = vscode.commands.registerCommand('extension.stop', async () => {
-	let response = await progressBar('/stop');
+	let response = await apiRequest('/stop');
 	console.log(`GET response.message: ${response}`);
 	vscode.window.showInformationMessage(response);
 });
