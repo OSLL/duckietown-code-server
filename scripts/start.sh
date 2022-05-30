@@ -11,9 +11,9 @@ then
     docker-compose up --build
  elif [[ $1 = "--buildFront" ]]
 then
-    echo "docker stop web-ide-frontend web-ide-nginx"
-    docker stop web-ide-frontend web-ide-nginx
-    docker rm web-ide-frontend web-ide-nginx
+    echo "docker stop web-ide-frontend"
+    docker stop web-ide-frontend 
+    docker rm web-ide-frontend 
 
     docker rmi duckietown-code-server_nginx duckietown-code-server_frontend lscr.io/linuxserver/code-server
     docker images -a
