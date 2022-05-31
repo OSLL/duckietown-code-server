@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import {LogMsgTreeProvider} from '../web/testLog';
+import * as os from 'os';
 //import  fetch  from 'node-fetch';
 
 
@@ -7,10 +8,7 @@ const backEndPort = 5001;
 const config = {local: `http://localhost:${backEndPort}`};
 
 // get duckiebot name for building and running solution
-//const os = require('os');
-//const hostName = os.hostname()
-
-const hostName = "autobot1"
+const hostName = os.hostname()
 
 async function apiRequest(name = '/') {
     return await fetch(config.local + name + `?hostname=${hostName}`)
@@ -29,7 +27,6 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.registerTreeDataProvider('commands', logMsgProvider);
 
 
-
 //############################################
 
     const progressBar = async (requestFor: string) => {
@@ -45,25 +42,24 @@ export function activate(context: vscode.ExtensionContext) {
         });
     }
 
-
     const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
         vscode.window.showInformationMessage('Hello World!'); //Проверка работы
     });
 
     const build = vscode.commands.registerCommand('extension.build', async () => {
-        let response = await progressBar('/build');
+        let response = await apiRequest('/build');
         console.log(`GET response.message: ${response}`);
         vscode.window.showInformationMessage(response);
     });
 
     const run = vscode.commands.registerCommand('extension.run', async () => {
-        let response = await progressBar('/run');
+        let response = await apiRequest('/run');
         console.log(`GET response.message: ${response}`);
         vscode.window.showInformationMessage(response);
     });
 
     const stop = vscode.commands.registerCommand('extension.stop', async () => {
-        let response = await progressBar('/stop');
+        let response = await apiRequest('/stop');
         console.log(`GET response.message: ${response}`);
         vscode.window.showInformationMessage(response);
     });
@@ -75,7 +71,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 }
 
-
 // this method is called when your extension is deactivated
 export function deactivate() {
 }
+
+
