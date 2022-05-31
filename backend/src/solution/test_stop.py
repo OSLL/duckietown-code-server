@@ -2,8 +2,8 @@ import subprocess
 import logging
 logging.basicConfig(level=logging.INFO)
 
-SOFT_STOP_COMMAND = "docker -H {hostname}.local stop -t 2 dts-run-template-ros-core"
-HARD_STOP_COMMAND = "docker -H {hostname}.local restart -t 1 duckiebot-interface"
+SOFT_STOP_COMMAND = "docker -H {hostname} stop -t 2 dts-run-template-ros-core"
+HARD_STOP_COMMAND = "docker -H {hostname} restart -t 1 duckiebot-interface"
 
 
 def stop_template_ros_core(hostname: str) -> None:

@@ -3,7 +3,7 @@ import subprocess
 import logging
 import os
 
-BUILD_COMMAND = "dts devel build --workdir {dir} -H {hostname}.local -f"
+BUILD_COMMAND = "dts devel build --workdir {dir} -H {hostname} -f"
 logging.basicConfig(level=logging.INFO)
 
 DEFAULT_DIR = "/src/template-ros-core"
@@ -18,7 +18,7 @@ def build_template_ros_core(hostname: str, directory: Path = Path(DEFAULT_DIR), 
             f"COPY template dir from hostname [{hostname}]")
         dir = str(directory.absolute())
         os.system(f'rm -fr {dir}/*')
-        COPY_COMMAND = f'rsync --rsh="sshpass -p quackquack ssh -o StrictHostKeyChecking=no -l duckie" --archive duckie@{hostname}.local:/code/template-ros-core/ {dir}'
+        COPY_COMMAND = f'rsync --rsh="sshpass -p quackquack ssh -o StrictHostKeyChecking=no -l duckie" --archive duckie@{hostname}:/code/template-ros-core/ {dir}'
         os.system(COPY_COMMAND)
         if not directory.is_absolute():
             logging.error(f"BUILD [{str(directory.absolute())}] is not absolute:")
