@@ -9,7 +9,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /dmitry/home/rep:/config/current-repository
+      - /code:/config/current-repository
     ports:
       - "8443:8443"
     restart: unless-stopped
