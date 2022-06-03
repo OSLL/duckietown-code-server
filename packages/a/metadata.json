@@ -1,5 +1,5 @@
 {
-    "name": "a",
+    "name": "Duckietown-code-server",
     "description": "Provides a page that displays duckietown-code-server",
     "dependencies": {
         "system-packages": [],
