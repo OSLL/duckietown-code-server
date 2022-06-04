@@ -1,6 +1,6 @@
 {
     "name" : "Duckietown-code-server",
-    "package" : "a",
+    "package" : "duckietown-code-server",
     "menu_entry" : {
         "order" : 1,
         "icon" : {

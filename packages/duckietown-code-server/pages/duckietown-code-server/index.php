@@ -3,12 +3,12 @@
 use \system\classes\Core;
 use \system\classes\Configuration;
 
-$hostname = Core::getSetting('hostname', 'a');
+$hostname = Core::getSetting('hostname', 'duckietown-code-server');
 
 if(strlen($hostname) < 2){
   $hostname = Core::getBrowserHostname();
 }
-$port = Core::getSetting('port', 'a');
+$port = Core::getSetting('port', 'duckietown-code-server');
 $url = sprintf('http://%s:%s/', $hostname, $port);
 
 ?>
