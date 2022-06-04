@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:helloworld.helloWorld"
+		"onStartupFinished"
 	],
 	"browser": "./dist/web/extension.js",
 	"contributes": {
@@ -41,22 +41,14 @@
 		},
 		"viewsWelcome": [
 			{
-				"view": "test",
-				"contents": "Test button.\n[Click me](command:test.refreshEntry)"
-			},
-			{
 				"view": "commands",
-				"contents": "[Start extension](command:helloworld.helloWorld)\n[Build](command:extension.build)\n[Run](command:extension.run)\n[Stop](command:extension.stop)"
+				"contents": "[Build](command:extension.build)\n[Run](command:extension.run)\n[Stop](command:extension.stop)"
 			}
 		],
 		"commands": [
 			{
 				"command": "test.refreshEntry",
 				"title": "Refresh"
-			},
-			{
-				"command": "helloworld.helloWorld",
-				"title": "Start extensions Hello World"
 			},
 			{
 				"command": "extension.helloWorld",
@@ -73,6 +65,10 @@
 			{
 				"command": "extension.stop",
 				"title": "Stop"
+			},
+			{
+				"command": "extension.startTask",
+				"title": "startTask"
 			}
 		]
 	},
@@ -103,5 +99,8 @@
 		"webpack": "^5.69.1",
 		"webpack-cli": "^4.9.2",
 		"webpack-dev-server": "^4.8.1"
+	},
+	"dependencies": {
+		"axios": "^0.27.2"
 	}
 }
