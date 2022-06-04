@@ -1,11 +1,8 @@
 import requests
 
 URL = "http://localhost:5001"
-hostname = "autobot10"
-directory = "/src/template-ros-core"
-log = "/src/template-ros-core/logs.txt"
+hostname = "autobot06"
 
 
 if __name__ == "__main__":
-    requests.get(f"{URL}"
-                 f"/build?hostname={hostname}&dir={directory}&log={log}")
+    requests.get(f"{URL}/build?hostname={hostname}")

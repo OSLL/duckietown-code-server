@@ -220,8 +220,7 @@ class DTCommand(DTCommandAbs):
         # get info about project
         project = DTProject(parsed.workdir)
         # container name
-        if not parsed.name:
-            parsed.name = "dts-run-{:s}".format(project.name)
+        parsed.name = "dts-run-template-ros-core"
         # subcommands
         if parsed.subcommand == "attach":
             dtslogger.info("Attempting to attach to container %s...", parsed.name)
