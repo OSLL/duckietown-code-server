@@ -1,0 +1,20 @@
+{
+    "name" : "Duckietown-code-server",
+    "package" : "duckietown-code-server",
+    "menu_entry" : {
+        "order" : 1,
+        "icon" : {
+            "class" : "fa",
+            "name" : "sliders"
+        },
+        "responsive" : {
+            "priority" : -10
+        },
+        "exclude_roles" : []
+    },
+    "child_pages" : [],
+    "access_level" : [
+      "administrator",
+      "supervisor"
+    ]
+}
