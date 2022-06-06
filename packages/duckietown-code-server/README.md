@@ -1,16 +1,3 @@
-## Duckietown Code Server
-
-Так как frontend (VS Code) разворачивается на боте, а backend на отдельной машине, каждый компонент запускается отдельно в соответствии с Readme:
-
-- Frontend: 
- [Развернуть docker-container](https://github.com/OSLL/duckietown-code-server/blob/dev/frontend/README.md) [Развернуть docker-container](https://github.com/OSLL/duckietown-code-server/blob/dev/frontend/README.md)
-  
-- Backend: 
-```
-  cd backend/
-  docker-compose up --build -d
-```
-
 ## Инструкция по подключению Web IDE в dashboard.
 
 1. Сначала скачиваем образ контейнера, для этого в терминале вводим команду:
@@ -20,7 +7,7 @@ docker pull afdaniele/compose
 ![изображение](https://user-images.githubusercontent.com/55065701/171939354-29efcb06-6531-4ed4-996a-b95c7dfe9a94.png)
 
 2. Теперь запукаем сам контейнер с дашбордом и нужным пакетом.
-При работе в Docker Desktop выбираем вклдаку Images и находим наш образ из пунтка 1. При запуске делаем в настройках доступным 8080 порт контейнера извне. Также необходимо указать порт для интерфейса localhost. Сокет по этому адресу будет мостом до Web IDE на 8080 порту контейнера. 
+При работе в Docker Desktop выбираем вкладку Images и находим наш образ из пунтка 1. При запуске делаем в настройках доступным 8080 порт контейнера извне. Также необходимо указать порт для интерфейса localhost. Сокет по этому адресу будет мостом до Web IDE на 8080 порту контейнера. 
 ![изображение](https://user-images.githubusercontent.com/55065701/171870360-1c1db11f-b424-43e6-b07a-d42fd578ce94.png)
 
 При работе в терминале используем команду:
@@ -70,3 +57,4 @@ mv <old_name> packages
 8. Теперь нам осталось просто запустить Web IDE по инструкции, приведенной выше и обновить страницу. 
 Web ide интегрировано в Duckietown Dashboard.
 ![изображение](https://user-images.githubusercontent.com/55065701/170999357-b435f122-e5d8-45a5-8fac-c8dd8bcc3ace.png)
+
