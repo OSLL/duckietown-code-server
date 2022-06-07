@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
-import {LogMsgTreeProvider} from '../web/testLog';
+import {LogMsgTreeProvider} from './LogMsgTreeProvider';
 import * as os from 'os';
-//import  fetch  from 'node-fetch';
 
 
 const backEndPort = 5001;
@@ -26,9 +25,6 @@ export function activate(context: vscode.ExtensionContext) {
 
     vscode.window.registerTreeDataProvider('commands', logMsgProvider);
 
-
-//############################################
-
     const progressBar = async (requestFor: string) => {
         return await vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
@@ -37,13 +33,12 @@ export function activate(context: vscode.ExtensionContext) {
         }, async (progress, token) => {
             progress.report({increment: 47, message: "Running... "});
             let response = await apiRequest(requestFor);
-
             return response;
         });
     }
 
     const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
-        vscode.window.showInformationMessage('Hello World!'); //Проверка работы
+        vscode.window.showInformationMessage('Hello World!'); //Work check
     });
 
     const build = vscode.commands.registerCommand('extension.build', async () => {
@@ -72,7 +67,4 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {
-}
-
-
+export function deactivate() {}

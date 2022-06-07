@@ -1,6 +1,6 @@
 {
-	"name": "helloworld",
-	"displayName": "HelloWorld",
+	"name": "duckietown-code-server",
+	"displayName": "duckietown-code-server",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -47,10 +47,6 @@
 		],
 		"commands": [
 			{
-				"command": "test.refreshEntry",
-				"title": "Refresh"
-			},
-			{
 				"command": "extension.helloWorld",
 				"title": "Hello World"
 			},
@@ -65,15 +61,10 @@
 			{
 				"command": "extension.stop",
 				"title": "Stop"
-			},
-			{
-				"command": "extension.startTask",
-				"title": "startTask"
 			}
 		]
 	},
 	"scripts": {
-		"test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
 		"pretest": "npm run compile-web",
 		"vscode:prepublish": "npm run package-web",
 		"compile-web": "webpack",
