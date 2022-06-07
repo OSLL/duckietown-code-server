@@ -1,8 +1,8 @@
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
-from solution.test_run import run_template_ros_core
-from solution.test_build import build_template_ros_core
-from solution.test_stop import stop_template_ros_core
+from solution.run import run_template_ros_core
+from solution.build import build_template_ros_core
+from solution.stop import stop_template_ros_core
 from flask import jsonify
 
 app = Flask(__name__)
