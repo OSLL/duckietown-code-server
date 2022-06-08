@@ -5,22 +5,24 @@ from solution.test_build import build_template_ros_core
 from solution.test_stop import stop_template_ros_core
 from flask import jsonify
 
+from solution.runningStatus import CommandProcessRunningStatus
+
 app = Flask(__name__)
 cors = CORS(app)
 app.config['Access-Control-Allow-Origin'] = '*'
 
 
 @app.route("/build", methods=['GET'])
-#@cross_origin()
+# @cross_origin()
 def build():
     hostname: str = request.args.get("hostname")
-    build_template_ros_core(hostname)
-    message = {'message': 'Solution was build solution!'}
+    status: CommandProcessRunningStatus = build_template_ros_core(hostname)
+    message = {'message': status.name}
     return jsonify(message)
 
 
 @app.route("/run", methods=['GET'])
-#@cross_origin()
+# @cross_origin()
 def run():
     hostname: str = request.args.get("hostname")
     run_template_ros_core(hostname)
@@ -29,7 +31,7 @@ def run():
 
 
 @app.route("/stop", methods=['GET'])
-#@cross_origin()
+# @cross_origin()
 def stop():
     hostname = request.args.get("hostname")
     stop_template_ros_core(hostname)
