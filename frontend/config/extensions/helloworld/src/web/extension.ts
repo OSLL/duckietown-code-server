@@ -1,11 +1,20 @@
 import * as vscode from 'vscode';
 import {LogMsgTreeProvider} from '../web/testLog';
 import * as os from 'os';
+
 //import  fetch  from 'node-fetch';
 
 
+const enum ERunningStatuses {
+    started = "started",
+    running = "running",
+    finished = "finished"
+}
+
 const backEndPort = 5001;
 const config = {local: `http://localhost:${backEndPort}`};
+
+let isBuildRunning = false; // sorry for this. (should figure out how to setup state ?)
 
 // get duckiebot name for building and running solution
 const hostName = os.hostname()
@@ -26,30 +35,66 @@ export function activate(context: vscode.ExtensionContext) {
 
     vscode.window.registerTreeDataProvider('commands', logMsgProvider);
 
+    // vscode.commands.executeCommand('setContext', 'canRunBuildCommand', false);
+    // todo: are there any way to disable button, while building for example?
 
-//############################################
 
-    const progressBar = async (requestFor: string) => {
-        return await vscode.window.withProgress({
+    //############################################
+
+    async function pollForExecution(method: string): Promise<ERunningStatuses> {
+        try {
+            let response: ERunningStatuses = await apiRequest(method);
+
+            if ([ERunningStatuses.running, ERunningStatuses.started].includes(response)) {
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                await pollForExecution(method);
+
+            } else if (response === ERunningStatuses.finished) {
+                // nothing ?
+            }
+
+        } catch (error) {
+            vscode.window.showInformationMessage("Smtng went wrong during polling");
+            console.error(error);
+        }
+        return ERunningStatuses.finished;
+    }
+
+    const fetchWithProgressBar = async (requestFor: string) => {
+        return vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
             title: "Try to " + requestFor.replace('/', ''),
             cancellable: false,
         }, async (progress, token) => {
-            progress.report({increment: 47, message: "Running... "});
-            let response = await apiRequest(requestFor);
+            progress.report({message: "Running... "});
+
+            let response: ERunningStatuses | string;
+            if (requestFor === '/build') {
+                isBuildRunning = true;
+                response = await pollForExecution(requestFor);
+                isBuildRunning = false;
+            } else {
+                response = await apiRequest(requestFor);
+            }
 
             return response;
         });
-    }
+    };
 
     const consoleLogHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
         vscode.window.showInformationMessage('Hello World!'); //Проверка работы
     });
 
     const build = vscode.commands.registerCommand('extension.build', async () => {
-        let response = await apiRequest('/build');
+
+        if (isBuildRunning) {
+            return;
+        }
+        const response = await fetchWithProgressBar('/build');
+
         console.log(`GET response.message: ${response}`);
-        vscode.window.showInformationMessage(response);
+        vscode.window.showInformationMessage("Build " + response);
     });
 
     const run = vscode.commands.registerCommand('extension.run', async () => {
