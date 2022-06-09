@@ -1,3 +1,4 @@
 duckietown-shell
 Flask
 flask-cors
+flask-sock

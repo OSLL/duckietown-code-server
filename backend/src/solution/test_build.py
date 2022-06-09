@@ -24,10 +24,11 @@ def build_template_ros_core(hostname: str, directory: Path = Path(DEFAULT_DIR), 
             logging.error(f"BUILD [{str(directory.absolute())}] is not absolute:")
             raise ValueError(f"[{str(directory.absolute())}] is not absolute:")
         # build solution
-        subprocess.Popen(BUILD_COMMAND.format(
+        build_proc = subprocess.call(BUILD_COMMAND.format(
             hostname=hostname,
             dir=str(directory.absolute())
-        ).split(), stdout=file, stderr=file)
+        ).split(), stdout=file, stderr=file, shell=True)
+        logging.info(build_proc)
 
 
 if __name__ == '__main__':
