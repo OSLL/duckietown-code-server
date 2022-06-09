@@ -6,11 +6,17 @@ Since the frontend (VS Code) is deployed on a bot, and the backend on a separate
 ```
   make buildFront
 ```
+or if duckiebot doesn't support Makefile
+```
+  docker-compose build frontend
+  docker-compose up -d frontend
+```
   
 - Backend(on server machine): 
 ```
   make buildBackend
 ```
+before build nginx change proxy_pass in default.conf file (change duckiebot name)
 
 To test running locally, type the command:
 ```

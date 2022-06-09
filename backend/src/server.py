@@ -15,7 +15,7 @@ app.config['Access-Control-Allow-Origin'] = '*'
 def build():
     hostname: str = request.args.get("hostname")
     build_template_ros_core(hostname)
-    message = {'message': 'Solution was build solution!'}
+    message = {'message': 'Solution was build!'}
     return jsonify(message)
 
 
