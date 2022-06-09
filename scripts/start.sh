@@ -1,24 +1,27 @@
 
 if [[ $1 = "--build" ]]
 then
-    echo "docker stop web-ide-frontend web-ide-backend web-ide-nginx"
-    docker stop web-ide-frontend web-ide-backend web-ide-nginx
-    docker rm web-ide-frontend web-ide-backend web-ide-nginx
+    echo "Building web-ide-frontend web-ide-backend web-ide-nginx..."
+    docker-compose stop
+    docker-compose rm -f
+    docker-compose build
+    docker-compose up -d
 
-    #docker system prune -f -a
-    docker images -a
-
-    docker-compose up --build
- elif [[ $1 = "--buildFront" ]]
+elif [[ $1 = "--buildFront" ]]
 then
-    echo "docker stop web-ide-frontend"
-    docker stop web-ide-frontend 
-    docker rm web-ide-frontend 
-
+    echo "Building web-ide-frontend..."
+    docker-compose stop frontend 
+    docker-compose rm -f frontend 
     docker rmi duckietown-code-server_nginx duckietown-code-server_frontend lscr.io/linuxserver/code-server
-    docker images -a
-
-    docker-compose up --build
+    docker-compose build frontend
+    docker-compose up -d frontend
+elif [[ $1 = "--buildBackend" ]]
+then
+    echo "Building web-ide-backend web-ide-nginx..."
+    docker-compose stop backend nginx
+    docker-compose rm -f backend nginx
+    docker-compose build backend nginx
+    docker-compose up -d backend nginx 
 else
-    docker-compose up
+    docker-compose up -d
 fi

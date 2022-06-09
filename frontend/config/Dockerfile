@@ -13,6 +13,6 @@ RUN apt-get update -yq \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash \
     && apt-get install nodejs -yq
 
-RUN cd ./extensions/helloworld/ \
+RUN cd ./extensions/duckietown-code-server/ \
     && npm i \
     && npm run compile-web
